@@ -5,44 +5,44 @@ variable "ami_id" {
 }
 
 variable "instance_type" {
-    type = string
-    default = "t3.micro"
+  type    = string
+  default = "t3.micro"
 }
 
 variable "tags" {
-    type = map #optional
-    default = {
-        Name = "backend"
-        Project = "expense"
-        Component = "backend"
-        Environment = "DEV"
-        Terraform = "true"
-    }
+  type = map(any) #optional
+  default = {
+    Name        = "backend"
+    Project     = "expense"
+    Component   = "backend"
+    Environment = "DEV"
+    Terraform   = "true"
+  }
 }
 
 variable "sg_name" {
-    default = "allow_sshh"
+  default = "allow_sshhi"
 }
 
 variable "sg_description" {
-    default = "Allow port number 22 for SSH access"
+  default = "Allow port number 22 for SSH access"
 }
 
 variable "from_port" {
-    default = 22
-    type = number
+  default = 22
+  type    = number
 }
 
 variable "to_port" {
-    default = 22
-    type = number
+  default = 22
+  type    = number
 }
 
 variable "protocol" {
-    default = "tcp"
+  default = "tcp"
 }
 
 variable "ingress_cidr" {
-    type = list(string)
-    default = ["0.0.0.0/0"]
+  type    = list(string)
+  default = ["0.0.0.0/0"]
 }
